@@ -111,13 +111,13 @@ public class TechJobs {
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
         if (someJobs.size() !=0 ){
+
             for (HashMap<String, String> i : someJobs){
+                Object[] fields = i.keySet().toArray();
                 System.out.println("*****");
-                System.out.println("position type: " + i.get("position type"));
-                System.out.println("name: "+ i.get("name"));
-                System.out.println("employer: "+ i.get("employer"));
-                System.out.println("location: " + i.get("location"));
-                System.out.println("core competency: " + i.get("core competency"));
+                for (int j =0; j < i.size(); j++ ){
+                    System.out.println(fields[j]+": " + i.get(fields[j]));
+                }
                 System.out.println("*****\n");
             }
         }else{
